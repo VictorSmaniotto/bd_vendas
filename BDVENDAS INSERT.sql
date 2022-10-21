@@ -1,0 +1,40 @@
+INSERT INTO CADESTADO(UF,ESTADO)
+					VALUES
+						('PB', 'PARAIBA'),
+                        ('GO','GOIAS'),
+                        ('ES','ESPIRITO SANTO');
+                        
+INSERT INTO CADCARGO (CODCARGO,CARGO)
+					VALUES
+						(8720002,'BIOENGENHEIRO'),
+						(8720001,'BIOTECNOLOGISTA');
+                        
+INSERT INTO CADMUN(CODMUN,MUNICIPIO,UF)
+				    VALUES
+						(2631,'BOM JESUS','PB'),
+                        (954, 'CARMO DO RIO VERDE', 'GO'),
+                        (863, 'SAO JOSE DO CALCADO', 'ES');    
+                        
+INSERT INTO CADFUN (CODFUN,NOME,ESTCIVIL,DTANASC,SEXO,SALHORA, CODCARGO, CODMUN)
+					VALUES
+						(8720009, 'GABRIEL MESQUITA', 'CASADO',  '1989-10-19', 'F', 6.590909, 8720002, 2631),
+                        (8720028, 'JOÃO HADDAD', 'CASADO', '1992-02-21', 'F', 6.590909, 8720001, 954),
+                        (8720029,'AMANDA MARQUES RIBEIRO', 'CASADO','1975-08-13', 'F',7.272727, 8720001, 863);
+
+INSERT INTO LCTFOLHA (CODFUN, DTAFOLHA, TIPOSAL, QTDHORAS)
+					VALUES
+						(8720009, '2021-01-31', 'MENSAL', 176),
+                        (8720028,'2021-01-31', 'MENSAL', 176),
+                        (8720029,'2021-01-31', 'MENSAL', 183.333333);
+
+
+
+UPDATE CADFUN
+SET NOME = 'AMANDA MARQUES RIBEIRO SANTOS'
+WHERE CODFUN = 8720029;
+
+
+
+SELECT MIN(CODFUN)
+FROM CADFUN 
+          
